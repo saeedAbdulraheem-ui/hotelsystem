@@ -25,16 +25,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         out = findViewById(R.id.out1);
         spin1 = findViewById(R.id.spin);
-        setContentView(R.layout.activity_main);
         btn1 = findViewById(R.id.buttonShow);
         btn1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 String type = spin1.getSelectedItem().toString();
                 CarModel model = new CarModel();
-
                 Car c = model.getCarByType(type);
                 if(c!=null){
                     out.setText(c.getMake()+"year "+c.getModel());
