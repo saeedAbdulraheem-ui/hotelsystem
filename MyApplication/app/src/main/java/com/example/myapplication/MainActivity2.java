@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +14,7 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 public class MainActivity2 extends AppCompatActivity {
-
+    float bmi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,17 +35,26 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     public void calculateBmi(){
+
         Button getbmi = (Button)findViewById(R.id.calcbmi);
         getbmi.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 TextView bmires = (TextView)findViewById(R.id.resultofbmi);
                 EditText weightedit = (EditText)findViewById(R.id.editweight);
                 EditText heightedit = (EditText)findViewById(R.id.editheight);
-                float weight,height,bmi;
+
+                new Thread(new Runnable() {
+                    public void run() {
+                        float weight,height;
+                        EditText weightedit = (EditText)findViewById(R.id.editweight);
+                        EditText heightedit = (EditText)findViewById(R.id.editheight);
+                        weight = Float.parseFloat(weightedit.getText().toString());
+                        height = Float.parseFloat(heightedit.getText().toString()); //bmi = KG/M^2
+                        bmi = 10000*weight/(height*height);
+                    }
+                }).start();
                 if(weightedit.getText().toString().length() > 1 && heightedit.getText().toString().length()>1) {
-                    weight = Float.parseFloat(weightedit.getText().toString());
-                    height = Float.parseFloat(heightedit.getText().toString()); //bmi = KG/M^2
-                    bmi = 10000*weight/(height*height);
+
                     if(bmi > 25){
                         //fat
                         bmires.setText(bmi +" overweight");
