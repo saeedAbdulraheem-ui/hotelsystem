@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/editweight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -32,7 +32,7 @@
         app:layout_constraintVertical_bias="0.3" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
+        android:id="@+id/editheight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -42,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber"
+        app:layout_constraintTop_toBottomOf="@+id/editweight"
         app:layout_constraintVertical_bias="0.145" />
 
     <TextView
@@ -53,7 +53,7 @@
         android:text="@string/weight"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextNumber"
+        app:layout_constraintEnd_toStartOf="@+id/editweight"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -67,7 +67,7 @@
         android:text="@string/height"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextNumber2"
+        app:layout_constraintEnd_toStartOf="@+id/editheight"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -89,7 +89,7 @@
         app:layout_constraintVertical_bias="0.232" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/calcbmi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="202dp"
@@ -97,7 +97,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextNumber2" />
+        app:layout_constraintTop_toTopOf="@+id/editheight" />
 
     <TextView
         android:id="@+id/resultofbmi"
@@ -105,8 +105,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="168dp"
         android:layout_marginBottom="77dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/calcbmi"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextNumber2" />
+        app:layout_constraintTop_toTopOf="@+id/editheight" />
 </androidx.constraintlayout.widget.ConstraintLayout>
