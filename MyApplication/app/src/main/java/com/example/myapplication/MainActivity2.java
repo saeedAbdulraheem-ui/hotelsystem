@@ -44,7 +44,7 @@ public class MainActivity2 extends AppCompatActivity {
                 if(weightedit.getText().toString().length() > 1 && heightedit.getText().toString().length()>1) {
                     weight = Float.parseFloat(weightedit.getText().toString());
                     height = Float.parseFloat(heightedit.getText().toString()); //bmi = KG/M^2
-                    bmi = 1000*weight/(height*height);
+                    bmi = 10000*weight/(height*height);
                     if(bmi > 25){
                         //fat
                         bmires.setText(bmi +" overweight");
