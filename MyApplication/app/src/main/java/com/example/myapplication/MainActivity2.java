@@ -43,7 +43,7 @@ public class MainActivity2 extends AppCompatActivity {
                 EditText weightedit = (EditText)findViewById(R.id.editweight);
                 EditText heightedit = (EditText)findViewById(R.id.editheight);
 
-                Thread calc = new Thread(new Runnable() {
+                Thread calc = new Thread(new Runnable() {//useless thread but it works
                     @Override
                     public void run() {
                         float weight, height;
