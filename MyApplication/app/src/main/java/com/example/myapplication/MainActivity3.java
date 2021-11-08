@@ -4,7 +4,10 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,16 +18,16 @@ public class MainActivity3 extends AppCompatActivity {
 
         // Array of strings storing country names
         String[] countries = new String[] {
-                "India",
-                "Pakistan",
-                "Sri Lanka",
-                "China",
-                "Bangladesh",
-                "Nepal",
-                "Afghanistan",
-                "North Korea",
-                "South Korea",
-                "Japan"
+                "Weight lifting",
+                "Push-ups",
+                "Ball exercise",
+                "One-legged Push-ups",
+                "Dumbbells",
+                "Arm exercise",
+                "Dumbbell Push-up",
+                "Different weight measurements",
+                "Sample Weight lifting",
+                "Back exercise"
         };
 
         // Array of integers points to images stored in /res/drawable-hdpi/
@@ -44,23 +47,13 @@ public class MainActivity3 extends AppCompatActivity {
                 R.drawable.image10,
         };
 
-        // Array of strings to store currencies
-        String[] currency = new String[]{
-                "Indian Rupee",
-                "Pakistani Rupee",
-                "Sri Lankan Rupee",
-                "Renminbi",
-                "Bangladeshi Taka",
-                "Nepalese Rupee",
-                "Afghani",
-                "North Korean Won",
-                "South Korean Won",
-                "Japanese Yen"
-        };
 
         /** Called when the activity is first created. */
         @Override
+
         public void onCreate(Bundle savedInstanceState) {
+
+
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main3);
 
@@ -69,8 +62,8 @@ public class MainActivity3 extends AppCompatActivity {
 
             for(int i=0;i<10;i++){
                 HashMap<String, String> hm = new HashMap<String,String>();
-                hm.put("txt", "Country : " + countries[i]);
-                hm.put("cur","Currency : " + currency[i]);
+                hm.put("txt", "Note : " + countries[i]);
+                //hm.put("cur","Currency : " + currency[i]);
                 hm.put("flag", Integer.toString(flags[i]) );
                 aList.add(hm);
             }
@@ -90,5 +83,14 @@ public class MainActivity3 extends AppCompatActivity {
 
             // Setting the adapter to the listView
             listView.setAdapter(adapter);
+
+            Button returntolobby = (Button)findViewById(R.id.lobbyreturn);
+
+            returntolobby.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity3.this, MainActivity.class);
+                    startActivity(intent);
+                }
+            });
         }
     }
