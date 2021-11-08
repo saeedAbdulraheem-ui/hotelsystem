@@ -5,6 +5,10 @@
     <string name="bruh">bruh</string>
 
     <string name="country_prompt">Choose an activity</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="bmi_calculator">BMI CALCULATOR</string>
+    <string name="get_bmi">get BMI</string>
 
     <string-array name="activities">
         <item>Exercises</item>
