@@ -2,4 +2,13 @@
     <string name="app_name">My Application</string>
     <string name="saeeds_fitness">Saeeds Fitness</string>
     <string name="hello">hello</string>
+    <string name="bruh">bruh</string>
+
+    <string name="country_prompt">Choose an activity</string>
+
+    <string-array name="activities">
+        <item>Exercises</item>
+        <item>BMI calculator</item>
+    </string-array>
+
 </resources>
