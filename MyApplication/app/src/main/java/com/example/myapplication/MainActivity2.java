@@ -43,16 +43,23 @@ public class MainActivity2 extends AppCompatActivity {
                 EditText weightedit = (EditText)findViewById(R.id.editweight);
                 EditText heightedit = (EditText)findViewById(R.id.editheight);
 
-                new Thread(new Runnable() {
+                Thread calc = new Thread(new Runnable() {
+                    @Override
                     public void run() {
-                        float weight,height;
-                        EditText weightedit = (EditText)findViewById(R.id.editweight);
-                        EditText heightedit = (EditText)findViewById(R.id.editheight);
+                        float weight, height;
+                        EditText weightedit = (EditText) findViewById(R.id.editweight);
+                        EditText heightedit = (EditText) findViewById(R.id.editheight);
                         weight = Float.parseFloat(weightedit.getText().toString());
                         height = Float.parseFloat(heightedit.getText().toString()); //bmi = KG/M^2
-                        bmi = 10000*weight/(height*height);
+                        bmi = 10000 * weight / (height * height);
                     }
-                }).start();
+                });
+                calc.start();
+                try {
+                    calc.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 if(weightedit.getText().toString().length() > 1 && heightedit.getText().toString().length()>1) {
 
                     if(bmi > 25){
