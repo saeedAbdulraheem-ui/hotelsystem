@@ -87,11 +87,6 @@ public class MainActivity extends AppCompatActivity {
             }else{
                 Toast.makeText(MainActivity.this, "Invalid Email, check again", Toast.LENGTH_SHORT).show();
             }
-            Toast.makeText(MainActivity.this,
-                    "OnClickListener : " +
-                            "\nSpinner 1 : "+ String.valueOf(spinner1.getSelectedItem()),
-                    Toast.LENGTH_SHORT).show();
-
         }
 
     });
